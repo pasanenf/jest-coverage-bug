@@ -1,0 +1,58 @@
+{
+  "name": "jest-coverage-bug",
+  "private": true,
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "moduleFileExtensions": [
+      "js",
+      "ts",
+      "json",
+      "vue"
+    ],
+    "setupFiles": [
+      "<rootDir>/__tests__/initialize.ts"
+    ],
+    "transform": {
+      "^.+\\.vue$": "@vue/vue3-jest",
+      "^.+\\.js$": "babel-jest",
+      "^.+\\.ts$": "ts-jest"
+    },
+    "testMatch": [
+      "**/__tests__/**/*.test.(js|ts)"
+    ],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/app/$1",
+      "^mocks/(.*)$": "<rootDir>/__mocks__/$1",
+      "^tests/(.*)$": "<rootDir>/__tests__/$1"
+    },
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/components/**/*.vue",
+      "!**/node_modules/**"
+    ],
+    "coverageProvider": "v8"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.13.10",
+    "@types/node": "^17.0.21",
+    "typescript": "~4.8",
+    "vue": "^3.2.37",
+    "yarn": "^1.15.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.14",
+    "@babel/preset-env": "^7.13.12",
+    "@babel/preset-typescript": "^7.13.0",
+    "@types/jest": "^27.4.0",
+    "@vue/test-utils": "^2",
+    "@vue/vue3-jest": "^27",
+    "babel-jest": "^27.4.6",
+    "babel-preset-typescript-vue3": "^2.0.17",
+    "jest": "^27.4.7",
+    "ts-jest": "^27",
+    "ts-node": "^10.5.0"
+  }
+}
